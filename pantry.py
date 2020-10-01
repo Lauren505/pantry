@@ -4,7 +4,7 @@ class pantry:
     def __init__(self):
         self.conn =  psycopg2.connect(database='pantry',
                                       user='postgres',
-                                      password='laupostgre01',
+                                      password='hahaochiang',
                                       host='34.80.136.214',
                                       port='5432')
         self.cur = self.conn.cursor()
