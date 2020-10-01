@@ -1,18 +1,30 @@
 import psycopg2
 
-class pantry:
-    def __init__(self):
+class item:
+    def __init__(self, name, category, weight, expdate):
         self.conn =  psycopg2.connect(database='pantry',
                                       user='postgres',
                                       password='hahaochiang',
                                       host='34.80.136.214',
                                       port='5432')
         self.cur = self.conn.cursor()
-        self.item = ""
-        self.weight = 0
         print("Database connected!")
 
-new = pantry()
-new.cur.execute("INSERT INTO recipe (item, category, weight) VALUES ('apple', 'fruit', 20)")
-new.conn.commit()
+        self.item = name
+        self.category = category
+        self.weight = weight
+        self.expdate = expdate
+
+        self.cur.execute("INSERT INTO inventory (item, category, weight, expdate) VALUES (%s, %s, %s, %s)",
+                        (self.item, self.category, self.weight, self.expdate))
+        self.conn.commit()
+        print("New item added to your pantry:)")
+
+    def update(self, weight):
+        self.cur.execute("UPDATE inventory SET weight=%s", (weight, ))
+        self.conn.commit()
+        print("updated successfully!")
+
+
+
     
