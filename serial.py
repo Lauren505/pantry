@@ -16,7 +16,7 @@ try:
             ser.open()
         # if ser.in_waiting:
         data_raw = ser.readline()
-        print(data_raw.decode(),end="")
+        print(data_raw.decode())
         data = sys.stdin.readline()
         ser.write(str.encode(data))
 except KeyboardInterrupt:
