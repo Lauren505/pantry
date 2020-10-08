@@ -1,4 +1,5 @@
-import serial, sys
+import serial
+import sys
  
 ser = serial.Serial('/dev/ttyS0', 9600, timeout=5)
 ser.flushInput()
