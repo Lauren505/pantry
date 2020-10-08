@@ -10,10 +10,18 @@ data = pumpkin.getInfo()
 @app.route('/')
 def index():
     return render_template("index.html")
-    '''for item in data:
-        for detail in item:
-            return detail'''
 
+@app.route('/add')
+def add():
+    return render_template("add.html")
+
+@app.route('/recipe')
+def recipe():
+    return render_template("recipe.html")
+
+@app.route('/inventory')
+def inventory():
+    return render_template("inventory.html")
 
 app.config['DEBUG'] = True
 
