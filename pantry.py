@@ -25,6 +25,14 @@ class item:
         self.conn.commit()
         print("updated successfully!")
 
-
+    def getInfo(self):
+        data = []
+        self.cur.execute("SELECT * FROM inventory WHERE item = %s", (self.item, ))
+        rows = self.cur.fetchall()
+        for row in rows:
+            data.append(row)
+        print("data: ", data)
+        print("type: ", type(data))
+        return data
 
     

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>PANTRY</title>
+        <link
+            rel="stylesheet"
+            type="text/css"
+            media="screen"
+            href="style.css"
+        />
+    </head>
+    <body>
+        <header id="title">
+            <h1 style="text-align: center">PANTRY</h1>
+        </header>
+        <section id="main">
+            <div class="buttons">            
+                <button id="detail_button">目前狀態</button>
+                <button id="recipe_button">搜尋食譜</button>
+                <button id="newitem_button">新增食材</button>
+            </div>
+            <div class="detail_page" style="display:none">
+                <label id="temperature">TEMPERATURE: </p>
+                <label id="humidity">HUMIDITY: </p>
+            </div>
+            <div class="recipe_page" style="display:none">
+            </div>
+            <div class="newitem_page" style="display:none">
+                <div>
+                    <div>FOOD NAME</div>
+                    <input type="text" id="name">
+                    <label for="category">CATEGOTY</label>
+                    <input type="text" id="category">
+                    <label for="date" >EXPIRATION DATE</label>
+                    <input type="date" id="expdate">
+                    <button id="save">NEXT</button>
+                </div>
+            </div>
+            <div class="measure" style="display:none" style="display:none">
+                <p>PLEASE PUT THE ITEM INTO THE PANTRY.</p>
+                <button id="done">DONE</button>
+            </div>
+
+        </section>
+        
+
+        <script src="main.js"></script>
+    </body>
+</html>
