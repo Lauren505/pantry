@@ -1,5 +1,5 @@
 from pantry import *
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
@@ -9,9 +9,10 @@ data = pumpkin.getInfo()
 
 @app.route('/')
 def index():
-    for item in data:
+    return render_template("index.html")
+    '''for item in data:
         for detail in item:
-            return detail
+            return detail'''
 
 
 app.config['DEBUG'] = True
