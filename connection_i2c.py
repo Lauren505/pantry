@@ -15,9 +15,10 @@ weight = 0
 while True:
 	k = input()
     for i in range(0,6):
-        bus.write_byte(addr, i) 
-        msg[i] = bus.read_byte(addr)
-        time.sleep(3)
+		bus.write_byte(addr, i) 
+		msg[i] = bus.read_byte(addr)
+		time.sleep(3)
+		
 
 	print('msg: {}'.format(msg))
 
