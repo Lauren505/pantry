@@ -1,5 +1,5 @@
 # key input
-# 0: humidity, tempurature
+# 0: humidity, temperature
 # 1: weight
 
 from time import sleep
@@ -13,19 +13,17 @@ current_t = 0
 weight = 0
 
 while True:
-	k = input()
     for i in range(0,6):
 		bus.write_byte(addr, i) 
 		msg[i] = bus.read_byte(addr)
 		time.sleep(3)
-		
 
 	print('msg: {}'.format(msg))
-
+	
 	current_h = msg[0] + 0.01 * msg[1]
 	current_t = msg[2] + 0.01 * msg[3]
 	weight = msg[4] + 0.01 * msg[5]
-
+	
 	print('h: {}'.format(current_h))
 	print('t: {}'.format(current_t))
 	print('w: {}'.format(weight))
