@@ -1,37 +1,29 @@
 # key input
-# 0: humidity
-# 2: tempurature
-# 4: weight
+# 0: humidity, tempurature
+# 1: weight
 
-
+from time import sleep
 from smbus import SMBus
 
 addr = 0x04
 bus = SMBus(1)
-msg1 = 0
+msg = []
 current_h = 0
 current_t = 0
 weight = 0
 
 while True:
 	k = input()
-	bus.write_byte(addr,(int)(k))
-	msg1 = bus.read_byte(addr)
-	bus.write_byte(addr,(int)(k+1))
-	msg2 = bus.read_byte(addr)
-	print('msg1: {}'.format(msg1))
-	print('msg2: {}'.format(msg2))
+    for i in range(0,6):
+        bus.write_byte(addr, i) 
+        msg[i] = bus.read_byte(addr)
+        time.sleep(3)
 
-	if(msg1 or msg2):
-		if(k=='0'): 
-			current_h = msg1 + 0.01 * msg2
-			msg1 = msg2 = 0
-		elif(k=='2'):
-			current_t = msg1 + 0.01 * msg2
-			msg1 = msg2 = 0
-		elif(k=='4'):
-			weight = msg1 + 0.01 * msg2
-			msg1 = msg2 = 0
+	print('msg: {}'.format(msg))
+
+	current_h = msg[0] + 0.01 * msg[1]
+	current_t = msg[2] + 0.01 * msg[3]
+	weight = msg[4] + 0.01 * msg[5]
 
 	print('h: {}'.format(current_h))
 	print('t: {}'.format(current_t))
