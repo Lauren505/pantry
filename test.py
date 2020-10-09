@@ -19,7 +19,7 @@ print(options)'''
 test = item("a","b",1,1)
 test.checkrecipe()'''
 
-from datetime import datetime, timedelta
+'''from datetime import datetime, timedelta
 today = datetime.today()
 dif = 8
 # date = (today+timedelta(days=dif))
@@ -27,4 +27,8 @@ date = (today+timedelta(days=dif)).strftime('%Y-%m-%d')
 print(date)
 print(today.strftime('%Y-%m-%d'))
 if "2020-10-15"<date:
-    print("yes")
+    print("yes")'''
+
+r = ["1", "2"]
+s = ", ".join(r) + "<br>"
+print("s:", s)

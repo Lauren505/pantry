@@ -1,5 +1,5 @@
 from pantry import *
-from connection_i2c import *
+# from connection_i2c import *
 from flask import Flask, render_template, request, Response
 import json
 # 缺POSITION
@@ -15,42 +15,51 @@ if weight!=0:
 @app.route('/api', methods=['GET', 'POST'])
 def api():
     print(request.args)
-    if request.args['action']=="update":
-        info = {'temp': current_t, 'humid': current_h, 'warning': showWarning()}
+    if request.args['action']=="update": # weight的更新也要寫在這裡
+        info = {'temp': 0, 'humid': 0, 'warning': showWarning()} #current_t, current_h, weight
         return Response(json.dumps(info), mimetype='application/json')
-    elif request.args['action']=="submit":
-        item_name = request.values['item']
-        exp_date = request.values['date']
-        item(item_name, 0, exp_date)
-    elif request.args['action']=="update":
-        pass
+    elif request.args['action']=="invall": 
+        inventory_all = {'inv': getInventory()}
+        print("here")
+        return Response(json.dumps(inventory_all), mimetype='application/json')
+    elif request.args['action']=="invpart": # undone
+        inventory_part = {'inv': getInventory()}
+        print("here")
+        return Response(json.dumps(inventory_part), mimetype='application/json')
+    elif request.args['action']=="recipe":
+        options = {'options': checkrecipe()}
+        print("here")
+        return Response(json.dumps(options), mimetype='application/json')
+    '''elif request.args['action']=="invall":
+        item_name = request.form.get('username')
+        #exp_date = request.args['expiredate']
+        print(item_name, 0)
+        item(item_name, 0, 0)'''
+
+@app.route('/get', methods=['GET', 'POST'])
+def get():
+    print(request.args)
+    item_name = request.form.get('username')
+    print(item_name)
+    print(request.values)
+    return render_template("add.html")
 
 @app.route('/')
 def index():
-    return render_template("index.html")
+    return render_template("mainpage.html")
 
 @app.route('/add')
 def add():
     return render_template("add.html")
 
-@app.route("/add/post_submit", methods=['GET', 'POST'])
-def submit():
-    if request.method == 'POST':
-        item_name = request.values.get('name')
-        exp_date = request.values.get('date')
-        item(item_name, 0, exp_date)
-    return render_template('add.html')
-
 @app.route('/recipe')
 def recipe():
     options = checkrecipe()
-    return render_template("recipe.html", options=options)
+    return render_template("recipe.html")
 
-@app.route('/req_inventory', methods=['GET', 'POST'])
+@app.route('/inventory', methods=['GET', 'POST'])
 def inventory():
-    if request.method == 'POST':
-        inventory_all = getInventory()
-    return render_template("inventory.html", inventory_all=inventory_all)
+    return render_template("inventory.html")
 
 @app.route('/inventory/by_days', methods=['GET', 'POST'])
 def inventorybydays():

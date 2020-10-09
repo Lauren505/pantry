@@ -36,7 +36,7 @@ class item:
 
 # [[expire today], [one day left], [two days left]]
 def showWarning():
-    data = [[],[],[]]
+    data = [["expire today: "],["expire tomorrow: "],["expire in two days: "]]
     zero = today.strftime('%Y-%m-%d')
     one = (today+timedelta(days=1)).strftime('%Y-%m-%d')
     two = (today+timedelta(days=2)).strftime('%Y-%m-%d')
@@ -52,7 +52,8 @@ def showWarning():
     rows = cur.fetchall()
     for row in rows:
         data[2].append(row) #[(),(),...]
-    return data
+    warning = "WARNING!!" + "<br>" +", ".join(data[0]) + "<br>" + ", ".join(data[1]) + "<br>" + ", ".join(data[2])
+    return warning
 
 def getInventory():
     data = []
@@ -60,7 +61,7 @@ def getInventory():
     rows = cur.fetchall()
     for row in rows:
         data.append(row) #[(),(),...]
-    return data
+    return "data"
 
 def getInventoryByDays(days): #date的型別???
     data = []

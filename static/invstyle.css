@@ -1,0 +1,108 @@
+.main{
+    flex-direction: row;
+    align-items: center;
+}
+
+body {
+    margin: 0 auto;
+    /* margin-top: 7em; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 300;
+}
+
+.all {
+    text-align: center;
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #ffffff;
+    padding: 10px;
+    transition: all 0.4s ease 0s;
+}
+
+.all:hover {
+    color: #ffffff !important;
+    background: #f6b93b;
+    border-color: #f6b93b !important;
+    transition: all 0.4s ease 0s;
+    }
+
+#expireddays{
+    font-size: 25px;
+    width: 20%;
+    border: 2px solid #CBCBCB;
+    outline: none;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #c9ac957e;
+    border-color: white;
+
+}
+
+.selectlist{
+    font-size: 100px;
+    font-weight: 100;
+    text-align: center;
+}
+
+.selectlist label{
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.expire__tags{
+    padding: 10px;
+    text-align: center;
+    font-size: 25px;
+    background-color: #738b6069;
+}
+
+.itemlist{
+    
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 27em;
+    overflow: scroll;
+    width: 500px;
+
+}
+
+.item{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    background: #DCEEF9;
+    border-radius: 10px;
+    border-top: 0;
+}
+
+.itemdetail{
+    text-align: center;
+    font-size: 25px;
+    padding: 8px;
+    padding-left: 15px;
+    border: none;
+    outline: none;
+    overflow-wrap: break-word;
+    cursor: pointer;
+    width: 100%;
+    transition: opacity 0.3s;
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #FFC7C7;
+}
+.itemdetail:focus{
+    background-color: #FEB4B4;
+}
+
+.itemdetail:hover{
+    border: 2px solid #9F9F9F;
+}
+
