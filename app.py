@@ -1,6 +1,7 @@
 from pantry import *
 from connection_i2c import *
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, Response
+import json
 # 缺POSITION
 app = Flask(__name__)
 
@@ -11,9 +12,22 @@ if weight!=0:
     item = ""
     item.update(weight)'''
 
+@app.route('/api', methods=['GET', 'POST'])
+def api():
+    print(request.args)
+    if request.args['action']=="update":
+        info = {'temp': current_t, 'humid': current_h, 'warning': showWarning()}
+        return Response(json.dumps(info), mimetype='application/json')
+    elif request.args['action']=="submit":
+        item_name = request.values['item']
+        exp_date = request.values['date']
+        item(item_name, 0, exp_date)
+    elif request.args['action']=="update":
+        pass
+
 @app.route('/')
 def index():
-    return render_template("index.html", temp=0, humid=0, warning=0)
+    return render_template("index.html")
 
 @app.route('/add')
 def add():

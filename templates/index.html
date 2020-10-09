@@ -8,12 +8,10 @@
             rel="stylesheet"
             type="text/css"
             media="screen"
-            href="{{ url_for('static', filename='style.css') }}"
+            href="{{ url_for('static', filename='css/style.css') }}"
         />
     </head>
     <body>
-        temp
-        {{ temp }}{{ humid }}{{ warning }}
         <header id="title">
             <h1 style="text-align: center">PANTRY</h1>
         </header>
@@ -48,6 +46,6 @@
         </section>
         
 
-        <script></script>
+        <script src="{{ url_for('static', filename='js/api.js') }}" type="text/javascript"></script>
     </body>
 </html>
