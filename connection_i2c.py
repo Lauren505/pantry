@@ -5,15 +5,16 @@
 # 5,6: weight
 # 7: closing door
 
-from time import sleep
+import time
+current_h = 0
+current_t = 0
+weight = 0
 from smbus import SMBus
 
 addr = 0x04
 bus = SMBus(1)
 msg = [0,0,0,0,0,0]
-current_h = 0
-current_t = 0
-weight = 0
+
 
 while True:
 	for i in range(0,5):
