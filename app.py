@@ -30,18 +30,13 @@ def api():
         options = {'options': checkrecipe()}
         print("here")
         return Response(json.dumps(options), mimetype='application/json')
-    '''elif request.args['action']=="invall":
-        item_name = request.form.get('username')
-        #exp_date = request.args['expiredate']
-        print(item_name, 0)
-        item(item_name, 0, 0)'''
 
 @app.route('/get', methods=['GET', 'POST'])
 def get():
-    print(request.args)
     item_name = request.form.get('username')
-    print(item_name)
-    print(request.values)
+    exp_date = request.form.get('expiredate')
+    item(item_name, 0, exp_date)
+    print("name: ", item_name, "expdate: ", exp_date)
     return render_template("add.html")
 
 @app.route('/')
