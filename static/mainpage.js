@@ -1,11 +1,10 @@
 const mainpage = 'http://127.0.0.1:5000/api?action=refresh';
-const updweight = 'http://127.0.0.1:5000/api?action=update';
+
 
 const temp = document.getElementById('temp')
 const humi = document.getElementById('humi')
 const warn = document.getElementById('warn')
 const refr = document.getElementById('refr')
-const updaw = document.getElementById('updaw')
 const inventory = document.getElementsByClassName('box')[0];
 const recipe = document.getElementsByClassName('box')[1];
 const add = document.getElementsByClassName('box')[2];
@@ -51,8 +50,4 @@ function update(url){
     }).catch((err) => {
         console.log('refresh error:', err);
     });
-}
-
-updaw.onclick = function () {
-    update(updweight);
 }
