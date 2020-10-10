@@ -52,7 +52,7 @@ def recipe():
     return render_template("recipe.html")
 
 @app.route('/addrecipe')
-def recipe():
+def addrecipe():
     return render_template("add_recipe.html")
 
 @app.route('/inventory', methods=['GET', 'POST'])
