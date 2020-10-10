@@ -48,7 +48,7 @@ def get():
     exp_date = request.form.get('expdate')
     item(item_name, 0, exp_date)
     print("name: ", item_name, "expdate: ", exp_date)
-    return render_template("scale.html")
+    return render_template("mainpage.html")
 
 @app.route('/addre', methods=['GET', 'POST'])
 def addre():
@@ -65,7 +65,7 @@ def addre():
     w = [w1, w2, w3, w4]
     print(n, w)
     addrecipe(re, n, w)
-    return render_template("mainpage.html")
+    return render_template("add_recipe.html")
 
 @app.route('/')
 def index():
