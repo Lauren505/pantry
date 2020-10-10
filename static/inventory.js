@@ -5,6 +5,11 @@ const item_list = [];
 const exp_item_list = [];
 const exp_date_input = document.getElementById("expireddays");
 const today = new Date();
+const back = document.getElementsByClassName('back')[0];
+
+back.addEventListener('click', event=>{
+    window.location.href = 'http://127.0.0.1:5000/';
+});
 
 exp_date_input.addEventListener('keyup', event => {
     if(event.keyCode === 13 && event.target.value !== ''){

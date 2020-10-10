@@ -142,3 +142,21 @@ body {
     border-radius: 10px;
     background-color: #FF5D5D;
 }
+
+.back {
+    width: 100%;
+  }
+  
+  .back button {
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+    text-align: right;
+  }
+  
+  .back button:hover{
+    background-color: #CA85DB;
+    transition: 0.3s;
+    color: white;
+  }
