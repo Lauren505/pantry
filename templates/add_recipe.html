@@ -13,49 +13,61 @@
     <h1>Add Recipe</h1>
 </head>
 <body>
+    <form method='post' action="/addre"></form>
     <div class="main">
         <div class="container">
             <div class="labelOfinput" >
                 <label for="name">食譜名稱</label>
-                <input type="text" id="name" class="inputitem">   
+                <input type="text" id="name" class="inputitem" name="re">   
             </div>
             
             <div class="material">
                 <div id="left" class="labelOfinput">
                     <label for="name">食材名稱</label>
-                    <input type="text" class="name">
+                    <input type="text" class="name" name="n1">
                 </div>
                 <div id="right" class="labelOfinput">
                     <label for="weight">重量</label>
-                    <input type="text" class="weight">  
+                    <input type="text" class="weight" name="w1">  
                 </div>    
             </div>
             <div class="material">
                 <div id="left" class="labelOfinput">
                     <label for="name">食材名稱</label>
-                    <input type="text" class="name">
+                    <input type="text" class="name" name="n2">
                 </div>
                 <div id="right" class="labelOfinput">
                     <label for="weight">重量</label>
-                    <input type="text" class="weight">  
+                    <input type="text" class="weight" name="w1">  
                 </div>
             </div> 
             <div class="material">
                 <div id="left" class="labelOfinput">
                     <label for="name">食材名稱</label>
-                    <input type="text" class="name">
+                    <input type="text" class="name" name="n3">
                 </div>
                 <div id="right" class="labelOfinput">
                     <label for="weight">重量</label>
-                    <input type="text" class="weight">  
+                    <input type="text" class="weight" name="w1">  
+                </div>
+            </div> 
+            <div class="material">
+                <div id="left" class="labelOfinput">
+                    <label for="name">食材名稱</label>
+                    <input type="text" class="name" name="n4">
+                </div>
+                <div id="right" class="labelOfinput">
+                    <label for="weight">重量</label>
+                    <input type="text" class="weight" name="w1">  
                 </div>
             </div> 
             <div class="finish__button">
                 <button>完成</button>
             </div>   
         </div>
-
+    
     </div>
+    </form>
     <script src="./static/add_recipe.js" type="text/javascript"></script>
 </body>
 </html>

@@ -43,16 +43,20 @@ def showWarning():
     cur.execute("SELECT item FROM inventory WHERE expdate=%s", (zero, ))
     rows = cur.fetchall()
     for row in rows:
-        data[0].append(row) #[(),(),...]
+        data[0].append(row[0]) #[(),(),...]
     cur.execute("SELECT item FROM inventory WHERE expdate=%s", (one, ))
     rows = cur.fetchall()
     for row in rows:
-        data[1].append(row) #[(),(),...]
+        data[1].append(row[0]) #[(),(),...]
     cur.execute("SELECT item FROM inventory WHERE expdate=%s", (two, ))
     rows = cur.fetchall()
     for row in rows:
-        data[2].append(row) #[(),(),...]
-    warning = "WARNING!!" + "<br>" +", ".join(data[0]) + "<br>" + ", ".join(data[1]) + "<br>" + ", ".join(data[2])
+        data[2].append(row[0]) #[(),(),...]
+    print(data)
+    s = ', '
+    print(s.join(data[0]))
+    print(type(s.join(data[0])))
+    warning = "WARNING!!" + "<br>" + s.join(data[0]) + "<br>" + s.join(data[1]) + "<br>" + s.join(data[2])
     return warning
 
 def getInventory():
@@ -101,3 +105,9 @@ def checkrecipe():
             options.append(dish)
     print(options)
     return options    
+
+def addrecipe(re, n, w):
+    cur.execute("INSERT INTO recipe VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",
+                (re, n[0], w[0], n[1], w[1], n[2], w[2], n[3], w[3], "https"))
+    conn.commit()
+    print("New recipe added to your cookbook:)")

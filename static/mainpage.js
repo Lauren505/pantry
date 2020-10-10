@@ -19,7 +19,7 @@ function refresh(url){
         warn.innerHTML = jsontext['warning'];
         test.innerHTML = jsontext['inv'];
     }).catch((err) => {
-    console.log('error:', err);
+        console.log('refresh error:', err);
     });
 }
 
@@ -27,4 +27,5 @@ setInterval(refresh(mainpage), 1000);
 refr.onclick = function () {
     refresh(mainpage);
 }
+
 

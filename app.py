@@ -39,6 +39,22 @@ def get():
     print("name: ", item_name, "expdate: ", exp_date)
     return render_template("add.html")
 
+@app.route('/addre', methods=['GET', 'POST'])
+def addre():
+    re = request.form.get('re')
+    n1 = request.form.get('n1')
+    w1 = request.form.get('w1')
+    n2 = request.form.get('n2')
+    w2 = request.form.get('w2')
+    n3 = request.form.get('n3')
+    w3 = request.form.get('w3')
+    n4 = request.form.get('n4')
+    w4 = request.form.get('w4')
+    n = [n1, n2, n3, n4]
+    w = [w1, w2, w3, w4]
+    #addrecipe(re, n, w)
+    return render_template("add_recipe.html")
+
 @app.route('/')
 def index():
     return render_template("mainpage.html")
@@ -50,10 +66,6 @@ def add():
 @app.route('/recipe')
 def recipe():
     return render_template("recipe.html")
-
-@app.route('/addrecipe')
-def addrecipe():
-    return render_template("add_recipe.html")
 
 @app.route('/inventory', methods=['GET', 'POST'])
 def inventory():
