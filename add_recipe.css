@@ -1,0 +1,155 @@
+.main{
+    align-items: center;
+    padding: 30px;
+}
+
+
+h1{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+    text-align: center;
+    color: black;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.container label{
+
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.inputitem{
+    padding: 0px;
+    border: 2px solid rgb(129, 129, 129);
+    background: rgba(254, 254, 254);
+    font-size: 30px;
+    font-weight: 100;
+    width: 80%;
+    background: rgb(254, 254, 254);
+    box-shadow: inset 0px 0px 10px 2px rgba(0, 0, 0, 0.048);
+    height: 3rem;
+    align-items: center;
+}
+
+.inputitem::placeholder{
+    font-weight: 100;
+    opacity: 0.4;
+}
+
+.container p{
+    font-size: 25px;
+    display: flex;
+}
+
+
+
+.finish__button{
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    align-items: center;
+}
+
+.finish__button input[type=submit]{
+    font-size: 2.5em;
+    font-weight: inherit;
+    border: 1px solid #7C7C7C;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 30px;
+    border-radius: 15px;
+    align-items: center;
+}
+
+
+* {
+  margin: auto;
+  align-items: center;
+}
+
+p{
+  padding: 10px;
+}
+
+label {
+  text-align: center;
+}
+
+input[type=text] {
+    display: flex;
+    width: 600px;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    border: 3px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+    font-size: 25px;
+  }
+  
+input[type=text]:focus {
+  border: 3px solid #555;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  width: 60%;
+  padding: 20px;
+}
+
+.buttons button {
+  height: 30px;
+  width: 0%;
+}
+
+
+.material {
+    display: flex;
+    flex-direction: row;
+}
+
+.labelOfinput{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+
+.labelOfinput input[type=text] {
+  display: flex;
+  width: 300px;
+  align-items: flex-start;
+  padding: 5px 20px;
+}
+
+.back {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.back button {
+  display: flex;
+  width: 100%;
+  padding: 10px;
+  font-size: 20px;
+  text-align: right;
+  border: 0;
+  background-color: white;
+}
+
+.back button:hover{
+  background-color:  #658569;
+  transition: 0.3s;
+  color: white;
+}
+
+.material {
+  display: flex;
+  flex-direction: row;
+}
