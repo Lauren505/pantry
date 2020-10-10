@@ -34,6 +34,11 @@ class item:
             data.append(row) #[(),(),...]
         return data
 
+def updateWeight(itemname, weight):
+    cur.execute("UPDATE inventory SET weight=%s WHERE item=%s", (weight, itemname))
+    conn.commit()
+    print("updated successfully!")
+
 # [[expire today], [one day left], [two days left]]
 def showWarning():
     data = [["expire today: "],["expire tomorrow: "],["expire in two days: "]]
@@ -121,3 +126,7 @@ def addrecipe(re, n, w):
     conn.commit()
     print(re, n[0], w[0], n[1], w[1], n[2], w[2], n[3], w[3], "https")
     print("New recipe added to your cookbook:)")
+
+def getCurItem(pos):
+    # according to pos return itemname
+    return "吐司"

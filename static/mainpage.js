@@ -48,13 +48,11 @@ function update(url){
     return response.json();
     }).then((jsontext) =>{
         console.log(jsontext);
-        temp.innerHTML = jsontext['temp'];
     }).catch((err) => {
         console.log('refresh error:', err);
     });
 }
 
-setInterval(refresh(mainpage), 1000);
-refr.onclick = function () {
-    refresh(mainpage);
+updaw.onclick = function () {
+    update(updweight);
 }

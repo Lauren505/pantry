@@ -3,6 +3,7 @@ from pantry import *
 from flask import Flask, render_template, request, Response
 import json
 # 缺POSITION
+
 app = Flask(__name__)
 
 
@@ -15,12 +16,14 @@ if weight!=0:
 @app.route('/api', methods=['GET', 'POST'])
 def api():
     print(request.args)
-    if request.args['action']=="refresh": # weight的更新也要寫在這裡
+    if request.args['action']=="refresh":
         info = {'temp': 0, 'humid': 0, 'warning': showWarning(), 'inv': getInventory()} #current_t, current_h, weight
         return Response(json.dumps(info), mimetype='application/json')
-    elif request.args['action']=="update": # weight的更新也要寫在這裡
-        info = {'temp': 0, 'humid': 0, 'warning': showWarning(), 'inv': getInventory()} #current_t, current_h, weight
-        return Response(json.dumps(info), mimetype='application/json')
+    elif request.args['action']=="update": # weight的更新在這裡
+        weight = 20 #weight
+        itemname = '吐司' #getCurItem(position)
+        updateWeight(itemname, weight) #current_t, current_h, weight
+        return Response(json.dumps(weight), mimetype='application/json')
     elif request.args['action']=="invall": 
         inventory_all = {'inv': getInventory()}
         print("here")
