@@ -45,8 +45,11 @@ def api():
 def get():
     item_name = request.form.get('name')
     exp_date = request.form.get('expdate')
-    item(item_name, 0, exp_date)
-    print("name: ", item_name, "expdate: ", exp_date)
+    com_choice = request.form.get('comchoice')
+    req = request.form
+    print(req)
+    #item(item_name, 0, exp_date)
+    print("name: ", item_name, "expdate: ", exp_date, "comchoice: ", com_choice)
     return render_template("mainpage.html")
 
 @app.route('/addre', methods=['GET', 'POST'])
