@@ -16,7 +16,7 @@ if weight!=0:
 def api():
     print(request.args)
     if request.args['action']=="update": # weight的更新也要寫在這裡
-        info = {'temp': 0, 'humid': 0, 'warning': showWarning()} #current_t, current_h, weight
+        info = {'temp': 0, 'humid': 0, 'warning': showWarning(), 'inv': getInventory()} #current_t, current_h, weight
         return Response(json.dumps(info), mimetype='application/json')
     elif request.args['action']=="invall": 
         inventory_all = {'inv': getInventory()}
@@ -54,7 +54,6 @@ def add():
 
 @app.route('/recipe')
 def recipe():
-    options = checkrecipe()
     return render_template("recipe.html")
 
 @app.route('/inventory', methods=['GET', 'POST'])

@@ -61,7 +61,8 @@ def getInventory():
     rows = cur.fetchall()
     for row in rows:
         data.append(row) #[(),(),...]
-    return "data"
+    print(data)
+    return data
 
 def getInventoryByDays(days): #date的型別???
     data = []
