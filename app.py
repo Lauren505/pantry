@@ -28,10 +28,10 @@ def api():
         inventory_all = {'inv': getInventory()}
         print("here")
         return Response(json.dumps(inventory_all), mimetype='application/json')
-    elif request.args['action']=="invpart": # undone
-        inventory_part = {'inv': getInventory()}
+    elif request.args['action']=="common": # undone
+        common = {'common': getCommon()}
         print("here")
-        return Response(json.dumps(inventory_part), mimetype='application/json')
+        return Response(json.dumps(common), mimetype='application/json')
     elif request.args['action']=="showrecipe":
         cookbook = {'cookbook': showrecipe()}
         print("here")
@@ -45,11 +45,8 @@ def api():
 def get():
     item_name = request.form.get('name')
     exp_date = request.form.get('expdate')
-    com_choice = request.form.get('comchoice')
-    req = request.form
-    print(req)
-    #item(item_name, 0, exp_date)
-    print("name: ", item_name, "expdate: ", exp_date, "comchoice: ", com_choice)
+    item(item_name, 0, exp_date)
+    print("name: ", item_name, "expdate: ", exp_date)
     return render_template("mainpage.html")
 
 @app.route('/addre', methods=['GET', 'POST'])
