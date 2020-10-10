@@ -1,0 +1,177 @@
+.main{
+    display: flex;
+    flex-direction: row;
+}
+
+.add {
+    display: flex;
+    width: 100%;
+}
+
+.add_btn {
+    opacity: 0.8;
+    display: flex;
+    width: 60px;
+    height: 60px;
+}
+
+.add_btn:hover {
+    opacity: 0.5;
+    cursor: pointer; 
+}
+
+body {
+    margin: 0 auto;
+    /* margin-top: 7em; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 300;
+}
+
+.all {
+    color: black;
+    text-align: center;
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 400px;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #7575757e;
+    padding: 10px;
+    transition: all 0.4s ease 0s;
+}
+
+.all:hover {
+    color: white !important;
+    background: #0000007e;
+    border-color: rgb(112, 112, 112) !important;
+    transition: all 0.4s ease 0s;
+    }
+
+.material{
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    text-decoration: none;
+    text-align: center;
+}
+
+#expireddays{
+    font-size: 25px;
+    width: 20%;
+    border: 2px solid #CBCBCB;
+    outline: none;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #c9ac957e;
+    border-color: white;
+
+}
+
+.selectlist{
+    display: flex;
+    width: 60%;
+    flex-direction: row;
+    padding: 20px;
+}
+
+.selectlist label{
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.expire__tags{
+    padding: 10px;
+    text-align: center;
+    font-size: 25px;
+    background-color: #738b6069;
+}
+
+.itemlist{
+    
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 27em;
+    overflow: scroll;
+    width: 400px;
+
+}
+
+.item{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    background: #DCEEF9;
+    border-radius: 10px;
+    border-top: 0;
+}
+
+.re_name{
+    text-align: center;
+    font-size: 25px;
+    padding: 8px;
+    padding-left: 15px;
+    border: none;
+    outline: none;
+    overflow-wrap: break-word;
+    cursor: pointer;
+    width: 100%;
+    transition: opacity 0.3s;
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+    border-radius: 5px;
+    
+}
+.re_name:hover{
+    background-color: #c9ac957e;
+}
+
+.re_name:focus{
+    border: 2px solid #9F9F9F;
+}
+
+.material {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
+
+.material_name {
+    text-align: center;
+    font-weight: 500;
+}
+
+.material_weight {
+    text-align: center;
+    font-weight: 500;
+}
+
+.withbtn{
+    display: flex;
+    flex-direction: row;
+}
+
+.back {
+    width: 100%;
+  }
+  
+  .back button {
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+    text-align: right;
+    border: 0;
+    background-color: white;
+  }
+  
+  .back button:hover{
+    background-color:  #658569;
+    transition: 0.3s;
+    color: white;
+  }
