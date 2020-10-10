@@ -30,7 +30,6 @@ function refresh(url){
         temp.innerHTML = jsontext['temp'];
         humi.innerHTML = jsontext['humid'];
         warn.innerHTML = jsontext['warning'];
-        test.innerHTML = jsontext['inv'];
     }).catch((err) => {
         console.log('refresh error:', err);
     });

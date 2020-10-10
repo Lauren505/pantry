@@ -17,7 +17,8 @@ if weight!=0:
 def api():
     print(request.args)
     if request.args['action']=="refresh":
-        info = {'temp': 0, 'humid': 0, 'warning': showWarning(), 'inv': getInventory()} #current_t, current_h, weight
+        data = getTH()
+        info = {'temp': data[0], 'humid': data[1], 'warning': showWarning()}
         return Response(json.dumps(info), mimetype='application/json')
     elif request.args['action']=="update": # weight的更新在這裡
         weight = 20 #weight

@@ -150,3 +150,8 @@ def getCommon():
 def setCommon(new):
     cur.execute("INSERT INTO common VALUES (%s)", (new, ))
     conn.commit()
+
+def getTH():
+    cur.execute("SELECT temp, humid FROM current WHERE curritem='curritem'")
+    row = cur.fetchone()
+    return row
