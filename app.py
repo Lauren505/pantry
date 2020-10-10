@@ -51,6 +51,10 @@ def add():
 def recipe():
     return render_template("recipe.html")
 
+@app.route('/addrecipe')
+def recipe():
+    return render_template("add_recipe.html")
+
 @app.route('/inventory', methods=['GET', 'POST'])
 def inventory():
     return render_template("inventory.html")
