@@ -8,6 +8,16 @@ conn =  psycopg2.connect(database='pantry',
 cur = conn.cursor()
 print("Database connected!")
 
+def getCurrItem():
+    cur.execute("SELECT name FROM current WHERE curritem='curritem'")
+    data = cur.fetchone()[0]
+    return data
+
+def setCurrItem(itemname):
+    cur.execute("UPDATE current SET name = %s WHERE curritem='curritem'", (itemname,))
+    conn.commit()
+    print("current item updated!")
+
 def getPosition():
     data = []
     cur.execute("SELECT position FROM inventory")
@@ -36,3 +46,6 @@ updatePosition('鮪魚罐頭', [0, 0, 0, 0, 0, 1, 0])
 updateWeight('鮪魚罐頭', 600)
 print(temp)
 print(getItem([0, 0, 0, 0, 0, 1, 0]))
+curr = getCurrItem()
+print(curr)
+setCurrItem('捯捯捯')
