@@ -66,6 +66,12 @@ def addre():
     addrecipe(re, n, w)
     return render_template("add_recipe.html")
 
+@app.route('/com', methods=['GET', 'POST'])
+def com():
+    com = request.form.get('com')
+    setCommon(com)
+    return render_template("add.html")
+
 @app.route('/')
 def index():
     return render_template("mainpage.html")

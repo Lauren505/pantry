@@ -138,3 +138,7 @@ def getCommon():
     for row in rows:
         data.append(row)
     return data
+
+def setCommon(new):
+    cur.execute("INSERT INTO common VALUES (%s)", (new, ))
+    conn.commit()
