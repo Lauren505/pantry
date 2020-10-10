@@ -8,7 +8,8 @@ h1{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 50px;
     text-align: center;
-    background-color: #ccc;
+    background: rgb(73, 63, 161);
+    color: white;
 }
 
 .container{
@@ -48,14 +49,14 @@ h1{
 
 
 
-.finish___button{
+.finish__button{
     display: flex;
     justify-content: space-around;
     list-style: none;
     align-items: center;
 }
 
-.finish__button button{
+.finish__button input[type=submit]{
     font-size: 2.5em;
     font-weight: inherit;
     border: 1px solid #7C7C7C;
@@ -144,4 +145,9 @@ input[type=text]:focus {
   background-color: #CA85DB;
   transition: 0.3s;
   color: white;
+}
+
+.material {
+  display: flex;
+  flex-direction: row;
 }
