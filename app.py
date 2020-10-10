@@ -58,7 +58,7 @@ def addre():
     w = [w1, w2, w3, w4]
     print(n, w)
     addrecipe(re, n, w)
-    return render_template("add_recipe.html")
+    return render_template("mainpage.html")
 
 @app.route('/')
 def index():
@@ -76,12 +76,14 @@ def recipe():
 def inventory():
     return render_template("inventory.html")
 
-@app.route('/inventory/by_days', methods=['GET', 'POST'])
-def inventorybydays():
-    if request.method == 'POST':
+@app.route('/invenbydays', methods=['GET', 'POST'])
+def invenbydays():
+    if request.args['action']=="invpar":
+        print(request.values)
         days = request.values.get('days')
+        print(days)
         inventory_part = getInventoryByDays(days)
-    return render_template("inventory.html", inventory_part=inventory_part)
+        return Response(json.dumps(inventory_part), mimetype='application/json')
 
 app.config['DEBUG'] = True
 
