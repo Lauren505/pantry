@@ -15,7 +15,10 @@ if weight!=0:
 @app.route('/api', methods=['GET', 'POST'])
 def api():
     print(request.args)
-    if request.args['action']=="update": # weight的更新也要寫在這裡
+    if request.args['action']=="refresh": # weight的更新也要寫在這裡
+        info = {'temp': 0, 'humid': 0, 'warning': showWarning(), 'inv': getInventory()} #current_t, current_h, weight
+        return Response(json.dumps(info), mimetype='application/json')
+    elif request.args['action']=="update": # weight的更新也要寫在這裡
         info = {'temp': 0, 'humid': 0, 'warning': showWarning(), 'inv': getInventory()} #current_t, current_h, weight
         return Response(json.dumps(info), mimetype='application/json')
     elif request.args['action']=="invall": 
@@ -41,7 +44,7 @@ def get():
     exp_date = request.form.get('expdate')
     item(item_name, 0, exp_date)
     print("name: ", item_name, "expdate: ", exp_date)
-    return render_template("add.html")
+    return render_template("scale.html")
 
 @app.route('/addre', methods=['GET', 'POST'])
 def addre():
