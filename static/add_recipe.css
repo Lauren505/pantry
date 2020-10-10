@@ -8,6 +8,7 @@ h1{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 50px;
     text-align: center;
+    background-color: #ccc;
 }
 
 .container{
@@ -42,6 +43,7 @@ h1{
 
 .container p{
     font-size: 25px;
+    display: flex;
 }
 
 
@@ -80,14 +82,14 @@ label {
 
 input[type=text] {
     display: flex;
-    width: 100%;
-    padding: 12px 20px;
-    margin: 10px 60px;
+    width: 600px;
+    padding: 10px 20px;
     box-sizing: border-box;
     border: 3px solid #ccc;
     -webkit-transition: 0.5s;
     transition: 0.5s;
     outline: none;
+    font-size: 25px;
   }
   
 input[type=text]:focus {
@@ -116,4 +118,30 @@ input[type=text]:focus {
     display: flex;
     flex-direction: column;
     text-align: center;
+}
+
+
+.labelOfinput input[type=text] {
+  display: flex;
+  width: 300px;
+  align-items: flex-start;
+  padding: 5px 20px;
+}
+
+.back {
+  width: 100%;
+}
+
+.back button {
+  display: flex;
+  width: 100%;
+  padding: 10px;
+  font-size: 20px;
+  text-align: right;
+}
+
+.back button:hover{
+  background-color: #CA85DB;
+  transition: 0.3s;
+  color: white;
 }
