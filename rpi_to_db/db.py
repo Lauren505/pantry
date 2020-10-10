@@ -18,6 +18,11 @@ def setCurrItem(itemname):
     conn.commit()
     print("current item updated!")
 
+def setCurrTH(temp, humid):
+    cur.execute("UPDATE current SET temp=%s, humid=%s WHERE curritem='curritem'", (temp, humid))
+    conn.commit()
+    print("current info updated!")
+
 def getPosition():
     data = []
     cur.execute("SELECT position FROM inventory")

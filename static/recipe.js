@@ -59,10 +59,9 @@ function addnew(data,order){
         document.getElementsByClassName("itemlist")[order].appendChild(node);
         for(let j = 1; j < data[i].length; j+=2){
             var subnode = document.createElement("LI"); 
-            subnode.setAttribute("class", "material");
-            node.appendChild(subnode);    
+            subnode.setAttribute("class", "material");  
             subnode.innerHTML += "<div class='material_name'>"+data[i][j]+": "+data[i][j+1]+"</div>"
-            
+            node.appendChild(subnode);  
         }
     }
 }

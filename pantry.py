@@ -18,7 +18,7 @@ class item:
 
         cur.execute("INSERT INTO inventory (item, weight, expdate) VALUES (%s, %s, %s)",
                         (self.item, self.weight, self.expdate))
-        cur.execute("INSERT INTO current (name) VALUES (%s) WHERE curritem='curritem'", (self.item, ))
+        cur.execute("UPDATE current SET name=%s WHERE curritem='curritem'", (self.item, ))
         conn.commit()
         print("New item added to your pantry:)")
 
