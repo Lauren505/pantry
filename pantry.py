@@ -18,6 +18,7 @@ class item:
 
         cur.execute("INSERT INTO inventory (item, weight, expdate) VALUES (%s, %s, %s)",
                         (self.item, self.weight, self.expdate))
+        cur.execute("INSERT INTO current (name) VALUES (%s) WHERE curritem='curritem'", (self.item, ))
         conn.commit()
         print("New item added to your pantry:)")
 
@@ -88,6 +89,7 @@ def checkrecipe():
     recipe=[]
     inventory=[]
     options=[]
+    result=[]
     cur.execute("SELECT * FROM recipe")
     rows = cur.fetchall()
     for row in rows:
@@ -109,7 +111,13 @@ def checkrecipe():
         if count==((len(r)-2)//2):
             options.append(dish)
     print(options)
-    return options    
+    for option in options:
+        cur.execute("SELECT * FROM recipe WHERE recipe=%s", (option, ))
+        rows = cur.fetchall()
+        for row in rows:
+            result.append(row)
+    print(result)
+    return result   
 
 def showrecipe():
     data = []

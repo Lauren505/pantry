@@ -24,7 +24,7 @@ function common(url){
 function addnew(i, name){
     var node = document.createElement("LI"); 
     node.setAttribute("class", "item");        
-    node.innerHTML = "<li class='item'><input type='button' id='opt"+i+"' class='itemdetail' value='"+name+"'></li>"                
+    node.innerHTML = "<input type='button' id='opt"+i+"' class='itemdetail' value='"+name+"'>"                
     document.getElementsByClassName("itemlist")[0].appendChild(node);
 }
 

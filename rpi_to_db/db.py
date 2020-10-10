@@ -41,6 +41,8 @@ def updateWeight(itemname, weight):
     conn.commit()
     print("weight updated successfully!")
 
+# getnewitemname
+
 temp = getPosition()
 updatePosition('鮪魚罐頭', [0, 0, 0, 0, 0, 1, 0])
 updateWeight('鮪魚罐頭', 600)

@@ -22,8 +22,9 @@ function showre(url){
     .then((response) => {
     return response.json();
     }).then((jsontext) =>{
-        console.log(jsontext);
-        allredetail.innerHTML = jsontext;
+        data = jsontext['cookbook']
+        console.log(data);
+        addnew(data, 1)
     }).catch((err) => {
     console.log('error:', err);
     });
@@ -34,8 +35,9 @@ function checkre(url){
     .then((response) => {
     return response.json();
     }).then((jsontext) =>{
-        console.log(jsontext);
-        availdetail.innerHTML = jsontext['inv'];
+        data = jsontext['options']
+        console.log(data);
+        addnew(data, 0)
     }).catch((err) => {
     console.log('error:', err);
     });
@@ -49,3 +51,18 @@ avail.onclick = function () {
     checkre(checkrecipe);
 }
 
+function addnew(data,order){
+    for(let i = 0; i < data.length; i++){
+        var node = document.createElement("LI"); 
+        node.setAttribute("class", "item");
+        node.innerHTML = "<button class='re_name'>"+data[i][0]+"</button>"
+        document.getElementsByClassName("itemlist")[order].appendChild(node);
+        for(let j = 1; j < data[i].length; j+=2){
+            var subnode = document.createElement("LI"); 
+            subnode.setAttribute("class", "material");
+            node.appendChild(subnode);    
+            subnode.innerHTML += "<div class='material_name'>"+data[i][j]+": "+data[i][j+1]+"</div>"
+            
+        }
+    }
+}
