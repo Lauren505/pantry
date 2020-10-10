@@ -1,4 +1,3 @@
-
 import psycopg2
 from datetime import datetime, timedelta
 
@@ -131,3 +130,11 @@ def addrecipe(re, n, w):
 def getCurItem(pos):
     # according to pos return itemname
     return "吐司"
+
+def getCommon():
+    data = []
+    cur.execute("SELECT * FROM common")
+    rows = cur.fetchall()
+    for row in rows:
+        data.append(row)
+    return data
