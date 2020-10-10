@@ -5,8 +5,21 @@ const temp = document.getElementById('temp')
 const humi = document.getElementById('humi')
 const warn = document.getElementById('warn')
 const refr = document.getElementById('refr')
+const inventory = document.getElementsByClassName('box')[0];
+const recipe = document.getElementsByClassName('box')[1];
+const add = document.getElementsByClassName('box')[2];
 
+inventory.addEventListener('click', event=>{
+    window.location.href = 'http://127.0.0.1:5000/inventory';
+});
 
+recipe.addEventListener('click', event=>{
+    window.location.href = 'http://127.0.0.1:5000/recipe';
+});
+
+add.addEventListener('click', event=>{
+    window.location.href = 'http://127.0.0.1:5000/add';
+});
 
 function refresh(url){
     fetch(url)
