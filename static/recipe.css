@@ -1,6 +1,5 @@
 .main{
     flex-direction: row;
-    align-items: center;
 }
 
 .add {
@@ -13,9 +12,8 @@
     opacity: 0.8;
     display: flex;
     width: 60px;
-    height: auto;
-    margin-top: 30px;
-    margin-left: 920px;
+    height: 60px;
+    margin-right: 20px;
 }
 
 .add_btn:hover {
@@ -40,15 +38,15 @@ body {
     width: 500px;
     text-transform: uppercase;
     text-decoration: none;
-    background: rgb(128, 75, 41);
+    background: rgb(73, 63, 161);
     padding: 10px;
     transition: all 0.4s ease 0s;
 }
 
 .all:hover {
     color: #000000 !important;
-    background: rgb(255, 98, 0);
-    border-color: rgb(119, 65, 30) !important;
+    background: rgb(120, 100, 209);
+    border-color: rgb(112, 112, 112) !important;
     transition: all 0.4s ease 0s;
     }
 
@@ -72,7 +70,11 @@ body {
 
 }
 
-
+.selectlist{
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+}
 
 .selectlist label{
     font-size: 25px;
@@ -108,7 +110,7 @@ body {
     border-top: 0;
 }
 
-.itemdetail{
+.re_name{
     text-align: center;
     font-size: 25px;
     padding: 8px;
@@ -125,11 +127,55 @@ body {
     border-radius: 5px;
     
 }
-.itemdetail:focus{
+.re_name:focus{
     background-color: #e9ad53;
 }
 
-.itemdetail:hover{
+.re_name:hover{
     border: 2px solid #9F9F9F;
+}
+
+.material {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
+
+.material_name {
+    text-align: center;
+    font-weight: 500;
+}
+
+.material_weight {
+    text-align: center;
+    font-weight: 500;
+}
+
+.back {
+    width: 100%;
+  }
+  
+  .back button {
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+    text-align: right;
+  }
+  
+  .back button:hover{
+    background-color: #CA85DB;
+    transition: 0.3s;
+    color: white;
+  }
+
+  .withbtn {
+      display: flex;
+      flex-direction: row;
+  }
+
+.redetail{
+    display: flex;
+    flex-direction: column;
 }
 
