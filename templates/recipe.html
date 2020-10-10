@@ -3,6 +3,9 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <div class="back">
+        <button>回主頁</button>
+    </div>
     <title>Recipe</title>
     <link 
         rel="stylesheet"
@@ -12,30 +15,60 @@
     >
 </head>
 <body>
-    <div class="add">
-        <img class="add_btn" src="./static/img/add.png"></img>
-    </div>
-    <div class="main">
-        <div class="selectlist">
-            <button class="all" id="avail">可使用的食譜</button>
-                <div id="availdetail"></div>
-            <button class="all" id="allre">所有食譜</button>
-                <div id="allredetail"></div>
-            <ul class="itemlist">
-                <li class="item">
-                    <button class="itemdetail">雞蛋</button>
-                    <li class="material">巧克力: 50g</li>
-                    <li class="material">奇異果: 87g</li>
-                </li>
-                <li class="item">
-                    <button class="itemdetail">雞蛋</button>
-                </li>
-                <li class="item">
-                    <button class="itemdetail">雞蛋</button>
-                </li>
-            </ul>
+    <div class="withbtn">
+
+        <div class="main">
+            <div class="selectlist">
+                <div class="redetail">
+                    <button class="all" id="avail">可使用的食譜</button>
+                    <ul class="itemlist">
+                        <li class="item">
+                            <button class="re_name">雞蛋</button>
+                            <li class="material">
+                                <div class="material_name">巧克力:</div>
+                                <div class="material_weight">50g</div>
+                            </li>
+                            <li class="material">
+                                <div class="material_name">奇異果</div>
+                                <div class="material_weight">87g</div>
+                            </li>    
+                        <li class="item">
+                            <button class="re_name">雞蛋</button>
+                        </li>
+                        <li class="item">
+                            <button class="re_name">雞蛋</button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="redetail">
+                    <button class="all" id="allre">所有食譜</button>
+                    <ul class="itemlist">
+                        <li class="item">
+                            <button class="re_name">雞蛋</button>
+                            <li class="material">
+                                <div class="material_name">巧克力:</div>
+                                <div class="material_weight">50g</div>
+                            </li>
+                            <li class="material">
+                                <div class="material_name">奇異果</div>
+                                <div class="material_weight">87g</div>
+                            </li>    
+                        <li class="item">
+                            <button class="re_name">雞蛋</button>
+                        </li>
+                        <li class="item">
+                            <button class="re_name">雞蛋</button>
+                        </li>
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+        <div class="add">
+            <img class="add_btn" src="./static/img/add.png"></img>
         </div>
     </div>
+    
     <script src="./static/recipe.js" type="text/javascript"></script>
 </body>
 </html>
