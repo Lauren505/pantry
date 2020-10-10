@@ -169,16 +169,22 @@ h1{
     margin-top: 15px;
 }
 
-.back button {
+.back {
+    width: 100%;
+  }
+  
+  .back button {
     display: flex;
     width: 100%;
     padding: 10px;
     font-size: 20px;
     text-align: right;
+    border: 0;
+    background-color: white;
   }
   
   .back button:hover{
-    background-color: #CA85DB;
+    background-color:  #658569;
     transition: 0.3s;
     color: white;
   }

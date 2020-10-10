@@ -8,8 +8,7 @@ h1{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 50px;
     text-align: center;
-    background: rgb(73, 63, 161);
-    color: white;
+    color: black;
 }
 
 .container{
@@ -131,6 +130,7 @@ input[type=text]:focus {
 
 .back {
   width: 100%;
+  margin-bottom: 10px;
 }
 
 .back button {
@@ -139,10 +139,12 @@ input[type=text]:focus {
   padding: 10px;
   font-size: 20px;
   text-align: right;
+  border: 0;
+  background-color: white;
 }
 
 .back button:hover{
-  background-color: #CA85DB;
+  background-color:  #658569;
   transition: 0.3s;
   color: white;
 }

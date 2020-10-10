@@ -7,7 +7,7 @@
 	{
 		margin: 0px;
 		padding: 0px;
-		background: #9C39AE;
+		background: #5c9274;
 		font-family: 'Varela', sans-serif;
 		font-size: 11pt;
 		font-weight: 300;
@@ -187,7 +187,7 @@
 		
 		display: inline-block;
 		padding: 0em 3em;
-		background: #CA85DB;
+		background: #658569;
 		border-radius: 10px;
 		letter-spacing: 0.20em;
 		line-height: 4em;
@@ -258,6 +258,17 @@
 		float: right;
 	}
 	
+	#icon1{
+		width:110px;
+		height:auto;
+		opacity: 0.8;
+	}
+	#icon2{
+		width:100px;
+		height:auto;
+		opacity: 0.6;
+		padding-top: 10px;
+	}
 /*********************************************************************************/
 /* 3-column                                                                      */
 /*********************************************************************************/

@@ -2,12 +2,10 @@
 .main{
     display: flex;
     flex-direction: row;
-    margin-top: 65px;
     /*align-items: center;*/
 }
 
 body {
-    margin: 0 auto;
     /* margin-top: 7em; */
     display: flex;
     flex-direction: column;
@@ -23,8 +21,8 @@ body {
     text-transform: uppercase;
     text-decoration: none;
     background: #ffffff;
-    padding: 10px;
     transition: all 0.4s ease 0s;
+    padding: 10px;
 }
 
 .all:hover {
@@ -39,17 +37,14 @@ body {
     width: 20%;
     border: 2px solid #CBCBCB;
     outline: none;
-    border-radius: 10px;
     text-align: center;
-    background-color: #c9ac957e;
-    border-color: white;
+    border-color: rgb(187, 187, 187);
 
 }
 
 .selectlist{
     font-size: 100px;
     font-weight: 100;
-    text-align: auto;
 }
 
 .selectlist label{
@@ -66,11 +61,11 @@ body {
 }
 
 .expire__tags{
-    padding: 10px;
+    padding: 20px;
     text-align: center;
     font-size: 25px;
     width: 90%;
-    background-color: #738b6069;
+    background-color: white;
 }
 
 .expire__tags label{
@@ -110,13 +105,14 @@ body {
     transition: opacity 0.3s;
     height: 100%;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #FFC7C7;
+    background-color: white;
     display: flex;
     flex-direction: row;
+    border: 1px solid black;
 }
 
 .itemdetail:focus{
-    background-color: #FEB4B4;
+    background-color: white;
 }
 
 .itemdetail:hover{
@@ -153,10 +149,13 @@ body {
     padding: 10px;
     font-size: 20px;
     text-align: right;
+    border: 0;
+    background-color: white;
   }
   
   .back button:hover{
-    background-color: #CA85DB;
+    background-color:  #658569;
     transition: 0.3s;
     color: white;
   }
+  
