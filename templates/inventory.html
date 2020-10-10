@@ -13,25 +13,54 @@
 </head>
 <body>
     <div class="main">
+        <div class="selectlist_exp">
+            <div class="expired_items">
+                <p>Warning: Expired</p>
+            </div>
+            <ul class="itemlist" id="exp_list_root">
+                <!--
+                    <li class="item">
+                        <button class="itemdetail">雞蛋</button>
+                    </li>
+                    <li class="item">
+                        <button class="itemdetail">雞蛋</button>
+                    </li>
+                    <li class="item">
+                        <button class="itemdetail">雞蛋</button>
+                    </li>
+                -->
+            </ul>
+        </div>
         <div class="selectlist">
-            <button class="all" id="sall">All</button></div>
+            <button class="all" id="sall">All</button>
             <div class="expire__tags">
                 <label for="expireddays">Expired in </label>
-                <input type="number" min="0" max="30" value="3" id="expireddays">
+                <input type="number" min="0" value="3" id="expireddays">
                 <label for="expireddays">Days</label>
             </div>
-            <ul class="itemlist">
-                <li class="item">
-                    <button class="itemdetail">雞蛋</button>
-                </li>
-                <li class="item">
-                    <button class="itemdetail">雞蛋</button>
-                </li>
-                <li class="item">
-                    <button class="itemdetail">雞蛋</button>
-                </li>
+            <ul class="itemlist" id="list_root">
+                <!--
+                    <li class="item">
+                        <div class="itemdetail">
+                            <div class="itemdetail-name">
+                                <p>dao1</p>
+                            </div>
+                            <div class="itemdetail-weight">
+                                <p>dao1</p>
+                            </div>
+                            <div class="itemdetail-date">
+                                <p>dao1</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <button class="itemdetail">雞蛋</button>
+                    </li>
+                    <li class="item">
+                        <button class="itemdetail">雞蛋</button>
+                    </li>
+                -->
             </ul>
-            <div id="egg">eee</div>
         </div>
     </div>
     <script src="./static/inventory.js" type="text/javascript"></script> 
