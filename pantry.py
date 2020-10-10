@@ -74,7 +74,7 @@ def getInventory():
     print(data)
     return data
 
-def getInventoryByDays(days): #date的型別???
+def getInventoryByDays(days): 
     data = []
     date = today+timedelta(days=days)
     date = date.strftime('%Y-%m-%d')

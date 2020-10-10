@@ -83,14 +83,6 @@ def recipe():
 def inventory():
     return render_template("inventory.html")
 
-@app.route('/invenbydays', methods=['GET', 'POST'])
-def invenbydays():
-    if request.args['action']=="invpar":
-        print(request.values)
-        days = request.values.get('days')
-        print(days)
-        inventory_part = getInventoryByDays(days)
-        return Response(json.dumps(inventory_part), mimetype='application/json')
 
 app.config['DEBUG'] = True
 
