@@ -33,8 +33,8 @@ def api():
 
 @app.route('/get', methods=['GET', 'POST'])
 def get():
-    item_name = request.form.get('username')
-    exp_date = request.form.get('expiredate')
+    item_name = request.form.get('name')
+    exp_date = request.form.get('expdate')
     item(item_name, 0, exp_date)
     print("name: ", item_name, "expdate: ", exp_date)
     return render_template("add.html")

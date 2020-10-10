@@ -13,16 +13,16 @@
     <h1>Add Items</h1>
 </head>
 <body>
-    <form>
-        <div class="main" method='post' action="/post_submit">
+    <form method='post' action="/get">
+        <div class="main">
             <div class="container">
                 <div>
                     <label for="expiredate">Expired Date:</label>
-                    <input type="date" id="expiredate" value="2020-10-09">
+                    <input type="date" id="expiredate" value="2020-10-09" name="expdate">
                 </div>
                 <div>
                     <label for="itemename">請輸入物品名稱：</label>
-                    <input type="text" id="itemname" placeholder=" 要放什麼呢？" class="inputitem">
+                    <input type="text" id="itemname" placeholder=" 要放什麼呢？" class="inputitem" name="name">
                 </div>
                 <div>
                     <p>或從「常用」選擇：</p>
