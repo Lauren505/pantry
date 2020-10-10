@@ -26,7 +26,11 @@ def api():
         inventory_part = {'inv': getInventory()}
         print("here")
         return Response(json.dumps(inventory_part), mimetype='application/json')
-    elif request.args['action']=="recipe":
+    elif request.args['action']=="showrecipe":
+        cookbook = {'cookbook': showrecipe()}
+        print("here")
+        return Response(json.dumps(cookbook), mimetype='application/json')
+    elif request.args['action']=="checkrecipe":
         options = {'options': checkrecipe()}
         print("here")
         return Response(json.dumps(options), mimetype='application/json')
@@ -52,7 +56,8 @@ def addre():
     w4 = request.form.get('w4')
     n = [n1, n2, n3, n4]
     w = [w1, w2, w3, w4]
-    #addrecipe(re, n, w)
+    print(n, w)
+    addrecipe(re, n, w)
     return render_template("add_recipe.html")
 
 @app.route('/')

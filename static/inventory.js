@@ -8,7 +8,7 @@ function inve(url){
     return response.json();
     }).then((jsontext) =>{
         console.log(jsontext);
-        egg.innerHTML = jsontext['inv'];
+        
     }).catch((err) => {
     console.log('error:', err);
     });

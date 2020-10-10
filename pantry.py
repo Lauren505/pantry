@@ -106,8 +106,18 @@ def checkrecipe():
     print(options)
     return options    
 
+def showrecipe():
+    data = []
+    cur.execute("SELECT * FROM recipe")
+    rows = cur.fetchall()
+    for row in rows:
+        data.append(row) #[(),(),...]
+    print(data)
+    return data
+
 def addrecipe(re, n, w):
     cur.execute("INSERT INTO recipe VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",
                 (re, n[0], w[0], n[1], w[1], n[2], w[2], n[3], w[3], "https"))
     conn.commit()
+    print(re, n[0], w[0], n[1], w[1], n[2], w[2], n[3], w[3], "https")
     print("New recipe added to your cookbook:)")
