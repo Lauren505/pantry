@@ -48,7 +48,7 @@ while True:
 	print('w: {}'.format(weight_diff))
 
 	if(takePic==1):
-		obj = getItem(getPosition)
+		obj = getItem(getPosition())
 		previous_weight = obj.weight
 		updateWeight(obj, previous_weight+weight_diff)
 		takePic = 0
