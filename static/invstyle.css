@@ -1,6 +1,9 @@
+
 .main{
+    display: flex;
     flex-direction: row;
-    align-items: center;
+    margin-top: 65px;
+    /*align-items: center;*/
 }
 
 body {
@@ -16,7 +19,7 @@ body {
     text-align: center;
     font-size: 25px;
     font-family: Arial, Helvetica, sans-serif;
-    width: 100%;
+    width: 95%;
     text-transform: uppercase;
     text-decoration: none;
     background: #ffffff;
@@ -46,7 +49,7 @@ body {
 .selectlist{
     font-size: 100px;
     font-weight: 100;
-    text-align: center;
+    text-align: auto;
 }
 
 .selectlist label{
@@ -54,22 +57,33 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.selectlist_exp {
+    font-size: 100px;
+    font-weight: 100;
+    text-align: center;
+    margin-right: 75px;
+    margin-top: 30px;
+}
+
 .expire__tags{
     padding: 10px;
     text-align: center;
     font-size: 25px;
+    width: 90%;
     background-color: #738b6069;
 }
 
+.expire__tags label{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 .itemlist{
-    
     list-style: none;
     padding: 0;
     margin: 0;
-    max-height: 27em;
+    max-height: 4em;
     overflow: scroll;
     width: 500px;
-
 }
 
 .item{
@@ -97,7 +111,10 @@ body {
     height: 100%;
     font-family: Arial, Helvetica, sans-serif;
     background-color: #FFC7C7;
+    display: flex;
+    flex-direction: row;
 }
+
 .itemdetail:focus{
     background-color: #FEB4B4;
 }
@@ -106,3 +123,22 @@ body {
     border: 2px solid #9F9F9F;
 }
 
+.itemdetail-name {
+    width: 40%;
+}
+
+.itemdetail-weight {
+    width: 20%;
+}
+
+.itemdetail-date {
+    width: 40%;
+}
+
+.expired_items p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    padding: 6px;
+    border-radius: 10px;
+    background-color: #FF5D5D;
+}
