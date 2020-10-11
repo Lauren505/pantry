@@ -14,7 +14,7 @@ function common(url){
         data = jsontext['common']
         console.log(data);
         for(let i = 0; i < data.length; i++){
-            addnew()
+            addnew(i, data[i])
         }
     }).catch((err) => {
         console.log('refresh error:', err);
@@ -24,11 +24,18 @@ function common(url){
 function addnew(i, name){
     var node = document.createElement("LI"); 
     node.setAttribute("class", "item");        
-    node.innerHTML = "<input type='button' id='opt"+i+"' class='itemdetail' value='"+name+"'>"                
+    node.innerHTML = "<input type='button' id='opt"+i+"' class='itemdetail' value='"+name+"' onclick='addtoinput(this)'>"                
     document.getElementsByClassName("itemlist")[0].appendChild(node);
 }
 
-setInterval(common(com), 5000);
-itemn.onclick = function () {
+window.onload = function() {
     common(com);
+}
+
+function addtoinput(myObj){
+    id = myObj.id
+    val = myObj.value
+    console.log("val: ", val)
+    itemn.value = val
+    
 }
