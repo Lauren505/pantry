@@ -28,17 +28,18 @@ function inve(url){
         database = jsontext['inv'];
         dataHandling(database);
         for(let i = 0; i < database.length; i++){
-            const new_item = additem(database[i][0], database[i][1], database[i][2], i);
-            const item_exp = database[i][2].split('-');
-            if(ConvertStringToDate(item_exp).getTime() < today.getTime()){
-                exp_item_list.push(new_item);
-                document.getElementById("exp_list_root").appendChild(new_item);
+            if (database[i][1]!=='0'){
+                const new_item = additem(database[i][0], database[i][1], database[i][2], i);
+                const item_exp = database[i][2].split('-');
+                if(ConvertStringToDate(item_exp).getTime() < today.getTime()){
+                    exp_item_list.push(new_item);
+                    document.getElementById("exp_list_root").appendChild(new_item);
+                }
+                else{
+                    item_list.push(new_item);
+                    document.getElementById("list_root").appendChild(new_item);
+                }
             }
-            else{
-                item_list.push(new_item);
-                document.getElementById("list_root").appendChild(new_item);
-            }
-            
         }
         
     }).catch((err) => {
