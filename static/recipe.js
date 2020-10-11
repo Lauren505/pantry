@@ -55,9 +55,10 @@ function addnew(data,order){
     for(let i = 0; i < data.length; i++){
         var node = document.createElement("LI"); 
         node.setAttribute("class", "item");
-        node.innerHTML = "<button class='re_name'>"+data[i][0]+"</button>"
+        node.innerHTML = "<button class='re_name' onclick='location.href='"+data[i][9]+" '>"+data[i][0]+"</button>"
+        console.log(data[i][9])
         document.getElementsByClassName("itemlist")[order].appendChild(node);
-        for(let j = 1; j < data[i].length; j+=2){
+        for(let j = 1; j < data[i].length-1; j+=2){
             var subnode = document.createElement("LI"); 
             subnode.setAttribute("class", "material");  
             subnode.innerHTML += "<div class='material_name'>"+data[i][j]+": "+data[i][j+1]+"</div>"
