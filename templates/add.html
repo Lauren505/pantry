@@ -17,35 +17,38 @@
 </head>
 <body>
     <div class="main">
-        <form method='post' action="/get">
-            <div class="container">
+        <div class="container">
+            <form method='post' action="/get">
+                
                 <div>
-                    <label for="expiredate">Expired Date: </label>
-                    <input type="date" id="expiredate" value="2020-10-09" name="expdate">
-                </div>
-                <div class="name">
+                    <div>
+                        <label for="expiredate">Expired Date: </label>
+                        <input type="date" id="expiredate" value="2020-10-09" name="expdate">
+                    </div>
                     <div class="keyname">
                         <label for="itemename">請輸入物品名稱：</label>
                         <input type="text" id="itemname" placeholder=" 要放什麼呢？" class="inputitem" name="name">
                     </div>
                     <div class="selectlist">
-                        <form method='post' action="/com">
-                            <div>
-                                <label for="usually">加入常用：</label>
-                                <input type="text" id="usually" placeholder=" 輸入加入名稱(enter)" class="additem" name="com">
-                            </div>
-                        </form>
                         <p>從「常用」選擇：</p>
                         <ul class="itemlist">
                         </ul>
 
                     </div>
+                    <div class="finish__button">
+                        <input type="submit" value="完成">
+                    </div>
                 </div>
-                <div class="finish__button">
-                    <input type="submit" value="完成">
+            </form>
+            <form method='post' action="/com">
+                <div>
+                    <label for="usually">加入常用：</label>
+                    <input type="text" id="usually" placeholder=" 輸入加入名稱(enter)" class="additem" name="com">
                 </div>
-            </div>
-        </form>
+            </form>
+            
+        </div>
+        
 
     </div>
     
