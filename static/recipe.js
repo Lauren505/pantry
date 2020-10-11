@@ -43,19 +43,15 @@ function checkre(url){
     });
 }
 
-allre.onclick = function () {
-    showre(showrecipe);
-}
+allre.addEventListener('click', () => { showre(showrecipe); }, {once: true})
+avail.addEventListener('click', () => { checkre(checkrecipe); }, {once: true})
 
-avail.onclick = function () {
-    checkre(checkrecipe);
-}
 
 function addnew(data,order){
     for(let i = 0; i < data.length; i++){
         var node = document.createElement("LI"); 
         node.setAttribute("class", "item");
-        node.innerHTML = "<button class='re_name' onclick='location.href='"+data[i][9]+" '>"+data[i][0]+"</button>"
+        node.innerHTML = "<a href="+data[i][9]+"><button class='re_name'>"+data[i][0]+"</button></a>"
         console.log(data[i][9])
         document.getElementsByClassName("itemlist")[order].appendChild(node);
         for(let j = 1; j < data[i].length-1; j+=2){
